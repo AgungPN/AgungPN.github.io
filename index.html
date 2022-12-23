@@ -6,12 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="	https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="	https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+    />
 
     <!-- Bootstrap Icons -->
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+    />
 
     <!-- AOS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
@@ -20,7 +24,8 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css"
       integrity="sha512-Velp0ebMKjcd9RiCoaHhLXkR1sFoCCWXNp6w4zj1hfMifYB5441C+sKeBl/T/Ka6NjBiRfBBQRaQq65ekYz3UQ=="
-      crossorigin="anonymous" />
+      crossorigin="anonymous"
+    />
 
     <title>Portfolio</title>
 
@@ -67,6 +72,42 @@
         width: 80vw;
         height: 1200px;
       }
+
+      /* text */
+      .container-text {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        font-size: clamp(2rem, 2.8vw, 5rem);
+        font-family: Raleway;
+        font-weight: bold;
+      }
+
+      .typewriter {
+        width: 21.5ch;
+        white-space: nowrap;
+        overflow: hidden;
+        border-right: 4px solid #212121;
+        animation: cursor 1s step-start infinite,
+          text 3s steps(18) alternate infinite;
+      }
+
+      @keyframes cursor {
+        0%,
+        100% {
+          border-color: #212121;
+        }
+      }
+
+      @keyframes text {
+        0% {
+          width: 0;
+        }
+        100% {
+          width: 21.5ch;
+        }
+      }
     </style>
   </head>
   <body id="home">
@@ -81,7 +122,8 @@
           data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent"
           aria-expanded="false"
-          aria-label="Toggle navigation">
+          aria-label="Toggle navigation"
+        >
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -129,13 +171,15 @@
           </ul>
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#home">Utama</a>
+              <a class="nav-link active" aria-current="page" href="#home"
+                >Home</a
+              >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#about">Tentang</a>
+              <a class="nav-link" href="#about">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#projects">Projek</a>
+              <a class="nav-link" href="#projects">Projects</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#cv">CV</a>
@@ -148,14 +192,26 @@
 
     <!-- Jumbotron -->
     <section class="jumbotron text-center" id="home">
-      <img src="image/profil.png" width="200" class="rounded-circle img-thumbnail shadow profil-shadow" />
-      <h1 class="display-4">Agung Prasetyo Nugroho</h1>
-      <p class="lead">Website Developer</p>
+      <img
+        src="image/profil.png"
+        width="200"
+        class="rounded-circle img-thumbnail shadow profil-shadow"
+      />
+      <h1 class="display-4 fw-bold">
+        <span style="color: #0f0fb3">Agung</span> Prasetyo Nugroho
+      </h1>
+      <div class="d-flex justify-content-center">
+        <p class="fs-4 text-bold typewriter text-center" style="color: #f34545">
+          Backend Developer
+        </p>
+      </div>
+
       <svg class="waves" xmlns="image/svg/waves.svg" viewBox="0 0 1440 320">
         <path
           fill="#fafafa"
           fill-opacity="1"
-          d="M0,160L48,149.3C96,139,192,117,288,133.3C384,149,480,203,576,208C672,213,768,171,864,149.3C960,128,1056,128,1152,138.7C1248,149,1344,171,1392,181.3L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+          d="M0,160L48,149.3C96,139,192,117,288,133.3C384,149,480,203,576,208C672,213,768,171,864,149.3C960,128,1056,128,1152,138.7C1248,149,1344,171,1392,181.3L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
+        ></path>
       </svg>
     </section>
     <!-- Akhir Jumbotron -->
@@ -163,34 +219,73 @@
     <!-- About -->
     <section id="about">
       <div class="container">
-        <div class="row text-center mb-3">
+        <div class="row text-center mb-5">
           <div class="col" data-aos="fade-down">
-            <h2>Tentang Saya</h2>
+            <h2>About Me</h2>
           </div>
         </div>
-        <div class="row justify-content-center fs-5 text-center">
-          <div class="col-md-4" data-aos="fade-right">
+
+        <div
+          class="row justify-content-center fs-5"
+          style="text-align: justify"
+        >
+          <div class="col-md-4 mx-5" data-aos="fade-right">
             <p>
-              Saya memulai mempelajari mengenai pemograman sejak kelas 10 SMK pada tahun 2018. Saya memulai
-              karir saya dengan membuat website-website static menggunakan
-              <em>HTML, CSS, dan JS, Framework CSS</em>.
+              I started learning coding since 2019 while still in high school,
+              and started using laravel 7 in 2020 during my internship.
             </p>
           </div>
-          <div class="col-md-4" data-aos="fade-left">
+          <div class="col-md-4 mx-5" data-aos="fade-left">
             <p>
-              Kemudian saya memulai tertarik mendalami menjadi <em>Web Developer</em> sejak kelas 11 SMK
-              sampai sekarang, saya telah mempelajari
-              <em>PHP, Laravel, Livewire, Database, ReactJS, AlpineJS, dll</em>.
+              So far I have developed the CCTV Semarang website, waste
+              management (when internship) and make some projects to improve my
+              skill.
             </p>
           </div>
         </div>
       </div>
 
-      <svg class="waves" xmlns="image/svg/waves.svg" viewBox="0 0 1440 320">
+      <hr>
+
+      <div class="row text-center mb-3 mt-5">
+        <div class="col" data-aos="fade-down">
+          <h2>My Skill</h2>
+        </div>
+      </div>
+
+        <div
+          class="row justify-content-center fs-5 text-end"
+        >
+          <div class="col-md-4 mx-5" data-aos="fade-right">
+        <h4 class="text-bold text-biru">Programming Language</h4>
+        <ul class="list-group list-group-flush">
+          <li class="list-group list-group-flush">PHP</li>
+          <li class="list-group list-group-flush">JavaScript</li>
+          <li class="list-group list-group-flush">Java</li>
+        </ul>
+          </div>
+          <div class="col-md-4 mx-5 text-start" data-aos="fade-left">
+        <h4 class="text-bold text-biru">Framework</h4>
+        <ul class="list-group list-group-flush">
+          <li class="list-group list-group-flush">Laravel</li>
+          <li class="list-group list-group-flush">Bootstrap</li>
+          <li class="list-group list-group-flush">Tailwind CSS</li>
+          <li class="list-group list-group-flush">Vue JS</li>
+        </ul>
+          </div>
+        </div>
+      </div>
+
+      <svg
+        class="waves"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 1440 320"
+      >
         <path
           fill="#c4cef7"
           fill-opacity="1"
-          d="M0,160L48,149.3C96,139,192,117,288,133.3C384,149,480,203,576,208C672,213,768,171,864,149.3C960,128,1056,128,1152,138.7C1248,149,1344,171,1392,181.3L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+          d="M0,288L120,256C240,224,480,160,720,128C960,96,1200,96,1320,96L1440,96L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"
+        ></path>
       </svg>
     </section>
     <!-- Akhir About -->
@@ -200,13 +295,17 @@
       <div class="container">
         <div class="row text-center mb-3">
           <div class="col">
-            <h2>Projek Saya</h2>
+            <h2>My Projects</h2>
           </div>
         </div>
         <div class="row justify-content-center text-center">
           <div class="col-md-4 mb-3" data-aos="flip-right">
             <div class="card">
-              <img src="image/portfolio1.png" class="card-img-top" alt="Project 1" />
+              <img
+                src="image/portfolio1.png"
+                class="card-img-top"
+                alt="Project 1"
+              />
               <div class="card-body">
                 <p class="card-text">DGshop</p>
               </div>
@@ -214,15 +313,27 @@
           </div>
           <div class="col-md-4 mb-3" data-aos="flip-right" data-aos-delay="500">
             <div class="card">
-              <img src="image/portfolio2.png" class="card-img-top" alt="Project 2" />
+              <img
+                src="image/portfolio2.png"
+                class="card-img-top"
+                alt="Project 2"
+              />
               <div class="card-body">
                 <p class="card-text">E-Resep</p>
               </div>
             </div>
           </div>
-          <div class="col-md-4 mb-3" data-aos="flip-right" data-aos-delay="1000">
+          <div
+            class="col-md-4 mb-3"
+            data-aos="flip-right"
+            data-aos-delay="1000"
+          >
             <div class="card">
-              <img src="image/portfolio3.png" class="card-img-top" alt="Project 3" />
+              <img
+                src="image/portfolio3.png"
+                class="card-img-top"
+                alt="Project 3"
+              />
               <div class="card-body">
                 <p class="card-text">Blogs</p>
               </div>
@@ -230,38 +341,68 @@
           </div>
           <div class="col-md-4 mb-3" data-aos="flip-right" data-aos-delay="500">
             <div class="card">
-              <img src="image/portfolio4.png" class="card-img-top" alt="Project 4" />
+              <img
+                src="image/portfolio4.png"
+                class="card-img-top"
+                alt="Project 4"
+              />
               <div class="card-body">
                 <p class="card-text">CCTV Semarang</p>
               </div>
             </div>
           </div>
-          <div class="col-md-4 mb-3" data-aos="flip-right" data-aos-delay="1000">
+          <div
+            class="col-md-4 mb-3"
+            data-aos="flip-right"
+            data-aos-delay="1000"
+          >
             <div class="card">
-              <img src="image/portfolio5.png" class="card-img-top" alt="Project 5" />
+              <img
+                src="image/portfolio5.png"
+                class="card-img-top"
+                alt="Project 5"
+              />
               <div class="card-body">
                 <p class="card-text">PESAT</p>
               </div>
             </div>
           </div>
-          <div class="col-md-4 mb-3" data-aos="flip-right" data-aos-delay="1000">
+          <div
+            class="col-md-4 mb-3"
+            data-aos="flip-right"
+            data-aos-delay="1000"
+          >
             <div class="card">
-              <img src="image/portfolio6.png" class="card-img-top" alt="Project 6" />
+              <img
+                src="image/portfolio6.png"
+                class="card-img-top"
+                alt="Project 6"
+              />
               <div class="card-body">
                 <p class="card-text">
-                  <a href="https://absenttelkom.herokuapp.com/" target="_blank" class="link-active text-decoration-none"
-                    >Absen Sekolahan</a >
+                  <a
+                    href="https://absenttelkom.herokuapp.com/"
+                    target="_blank"
+                    class="link-active text-decoration-none"
+                    >Website Absen School</a
+                  >
                 </p>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <svg class="waves" xmlns="image/svg/waves2.svg" viewBox="0 0 1440 320">
+
+      <svg
+        class="waves"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 1440 320"
+      >
         <path
           fill="#fafafa"
           fill-opacity="1"
-          d="M0,160L48,149.3C96,139,192,117,288,133.3C384,149,480,203,576,208C672,213,768,171,864,149.3C960,128,1056,128,1152,138.7C1248,149,1344,171,1392,181.3L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+          d="M0,32L120,53.3C240,75,480,117,720,138.7C960,160,1200,160,1320,160L1440,160L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"
+        ></path>
       </svg>
     </section>
     <!-- Akhir Projects -->
@@ -270,14 +411,18 @@
     <section id="cv">
       <div class="row text-center mb-3">
         <div class="col">
-          <h2>CV Saya</h2>
+          <h2>My CV</h2>
         </div>
       </div>
       <div class="container-home">
         <!-- <iframe src="image/Agung Prasetyo Nugroho CV.pdf" class="embed" allowfullscreen></iframe> -->
         <object data="image/Agung Prasetyo Nugroho CV.pdf" class="embed">
           <p>Oops! Your browser doesn't support PDFs!</p>
-          <p><a href="image/Agung Prasetyo Nugroho CV.pdf" target="_blank">Download Instead</a></p>
+          <p>
+            <a href="image/Agung Prasetyo Nugroho CV.pdf" target="_blank"
+              >Download Instead</a
+            >
+          </p>
         </object>
       </div>
     </section>
@@ -288,7 +433,7 @@
       <strong
         >My Portfolio @
         <script>
-          document.write(new Date().getFullYear())
+          document.write(new Date().getFullYear());
         </script></strong
       >
     </footer>
@@ -300,61 +445,66 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/TextPlugin.min.js"></script>
 
     <script>
-      gsap.from(".navbar", { duration: 1.5, opacity: 0, y: "-100%", ease: "bounce" })
-      gsap.from(".display-4", { delay: 1, duration: 1, opacity: 0, x: "-10%" })
+      gsap.from(".navbar", {
+        duration: 1.5,
+        opacity: 0,
+        y: "-100%",
+        ease: "bounce",
+      });
+      gsap.from(".display-4", { delay: 1, duration: 1, opacity: 0, x: "-10%" });
 
-      const galleryImages = document.querySelectorAll(".gallery-img")
-      const delayTimes = [0, 50, 100, 150, 200, 250, 300, 350, 400, 450]
+      const galleryImages = document.querySelectorAll(".gallery-img");
+      const delayTimes = [0, 50, 100, 150, 200, 250, 300, 350, 400, 450];
 
       function shuffleArray(array) {
         for (var i = array.length - 1; i > 0; i--) {
-          var j = Math.floor(Math.random() * (i + 1))
-          var temp = array[i]
-          array[i] = array[j]
-          array[j] = temp
+          var j = Math.floor(Math.random() * (i + 1));
+          var temp = array[i];
+          array[i] = array[j];
+          array[j] = temp;
         }
-        return array
+        return array;
       }
-      const newDelay = shuffleArray(delayTimes)
+      const newDelay = shuffleArray(delayTimes);
       galleryImages.forEach((img, i) => {
-        img.dataset.aos = "fade-up"
-        img.dataset.aosDelay = i * 50 + ""
+        img.dataset.aos = "fade-up";
+        img.dataset.aosDelay = i * 50 + "";
         // img.dataset.aosDelay = newDelay[i];
-      })
+      });
 
       AOS.init({
         once: true,
         duration: 3000,
-      })
+      });
     </script>
 
     <script>
       const scriptURL =
-        "https://script.google.com/macros/s/AKfycbzjWwvjJihKz3-24SxEnHM5XFjNPgQd_dv3uD_fgjLSp_4AAXsC6IC4C_ECvWyLkGsuBg/exec"
-      const form = document.forms["wpu-contact-form"]
-      const btnKirim = document.querySelector(".btn-kirim")
-      const btnLoading = document.querySelector(".btn-loading")
-      const myAlert = document.querySelector(".my-alert")
+        "https://script.google.com/macros/s/AKfycbzjWwvjJihKz3-24SxEnHM5XFjNPgQd_dv3uD_fgjLSp_4AAXsC6IC4C_ECvWyLkGsuBg/exec";
+      const form = document.forms["wpu-contact-form"];
+      const btnKirim = document.querySelector(".btn-kirim");
+      const btnLoading = document.querySelector(".btn-loading");
+      const myAlert = document.querySelector(".my-alert");
 
       form.addEventListener("submit", (e) => {
-        e.preventDefault()
+        e.preventDefault();
         // ketika tombol submit diklik
         // tampilkan tombol loading, hilangkan tombol kirim
-        btnLoading.classList.toggle("d-none")
-        btnKirim.classList.toggle("d-none")
+        btnLoading.classList.toggle("d-none");
+        btnKirim.classList.toggle("d-none");
         fetch(scriptURL, { method: "POST", body: new FormData(form) })
           .then((response) => {
             // tampilkan tombol kirim, hilangkan tombol loading
-            btnLoading.classList.toggle("d-none")
-            btnKirim.classList.toggle("d-none")
+            btnLoading.classList.toggle("d-none");
+            btnKirim.classList.toggle("d-none");
             // tampilkan alert
-            myAlert.classList.toggle("d-none")
+            myAlert.classList.toggle("d-none");
             // reset formnya
-            form.reset()
-            console.log("Success!", response)
+            form.reset();
+            console.log("Success!", response);
           })
-          .catch((error) => console.error("Error!", error.message))
-      })
+          .catch((error) => console.error("Error!", error.message));
+      });
     </script>
 
     <script type="text/javascript" src="js/vanilla-tilt.min.js"></script>
@@ -363,7 +513,7 @@
         max: 35,
         speed: 1000,
         glare: true,
-      })
+      });
     </script>
   </body>
 </html>
